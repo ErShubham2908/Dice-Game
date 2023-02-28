@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Dice Game</title>
+</head>
+<body>
+    <div class="item_head">
+        <div class="item_heading">
+            <p>Two Player Dice Game</p>
+        </div>
+        <div class="item_child">
+            <div class="item_child1">
+                <p id="playerOne" ></p>
+                <input type="text" id="item_player1" >
+                <button onclick="playerOne()" >Player 1</button>
+            </div>
+            <div class="item_child2">
+                <p id="playerTwo"></p>
+                <input type="text" id="item_player2" >
+                <button onclick="playerTwo()" >Player 2</button>
+            </div>
+        </div>
+        <div class="item_roll">
+            <button onclick="rollDice()">Roll Dice</button>
+        </div>
+    </div>
+    <script src="./script.js" ></script>
+</body>
+</html>
