@@ -1,3 +1,4 @@
+let imgDice = document.getElementById('item_dice_img');
 let item_roll = document.getElementById('item_roll');
 let secondBtn = document.getElementById('item_dice2');
 let item_child1 = document.getElementById('item_child1');
@@ -6,11 +7,15 @@ let turn2 = document.getElementById('turn2');
 let playerChance = 1;
 let playerOneScore = 0;
 let playerTwoScore = 0;
+function newgame(){
+    location.reload();
+}
 (function(){
     item_roll.style.display = "none"
     secondBtn.style.display = "none"
     turn1.style.display = 'none'
-    turn2.style.display = 'none'    
+    turn2.style.display = 'none'
+    imgDice.style.display = 'none'
 })()
 
 function playerOne(){
@@ -30,6 +35,7 @@ function playerTwo(){
     document.getElementById('item_dice2').style.display = 'none';
     item_roll.style.display = 'block';
     turn1.style.display = 'block'
+    imgDice.style.display = 'block'
 }
 
 function rollDice(){
@@ -62,7 +68,20 @@ function rollDice(){
             turn2.style.display = 'none'
         }
     }
-    if(count % 2 === 0){
-        
+    if(playerOneScore >= 30 || playerTwoScore >=30){
+        let winner1 = document.getElementById('winner1');
+        let winner2 = document.getElementById('winner2');
+        let child1 = document.getElementById('item_child1');
+        let child2 = document.getElementById('item_child2');
+        child1.style.display = 'none'
+        child2.style.display = 'none'
+        item_roll.style.display = 'none'
+        imgDice.style.display = 'none'
+        if(playerOneScore >= 30){
+            winner1.innerHTML = `You are the Winner`
+        }
+        else if(playerTwoScore >= 30){
+            winner2.innerHTML = `You are the Winner`
+        }
     }
 }

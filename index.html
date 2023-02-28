@@ -13,14 +13,14 @@
         <div class="item_heading">
             <p>Two Player Dice Game</p>
         </div>
-        <div class="item_child">
+        <div class="item_child" id="item_child1">
             <div class="item_child1">
                 <p id="playerOne" class="item_playerOne"></p>
                 <input type="text" id="item_player1" placeholder="Player 1 " >
                 <button onclick="playerOne()" id="item_dice1">Player 1</button>
                 <span class="item_turn" id="turn1">Roll Dice</span>
             </div>
-            <div class="item_child2">
+            <div class="item_child2" id="item_child2">
                 <p id="playerTwo"></p>
                 <input type="text" id="item_player2" placeholder="Player 2 ">
                 <button onclick="playerTwo()" id="item_dice2"  >Player 2</button>
@@ -35,6 +35,11 @@
             <p id="item_resultOne" class="item_result1"></p>
             <p id="item_resultTwo" class="item_result2"></p>
         </div>
+        <div class="item_winner">
+            <span id="winner1"></span>
+            <span id="winner2"></span>
+        </div>
+        <button onclick="newgame()">Reset</button>
     </div>
     <script src="./script.js" ></script>
 </body>
