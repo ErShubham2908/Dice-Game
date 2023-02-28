@@ -1,11 +1,16 @@
 let item_roll = document.getElementById('item_roll');
 let secondBtn = document.getElementById('item_dice2');
+let item_child1 = document.getElementById('item_child1');
+let turn1 = document.getElementById('turn1');
+let turn2 = document.getElementById('turn2');
 let playerChance = 1;
 let playerOneScore = 0;
 let playerTwoScore = 0;
 (function(){
     item_roll.style.display = "none"
     secondBtn.style.display = "none"
+    turn1.style.display = 'none'
+    turn2.style.display = 'none'    
 })()
 
 function playerOne(){
@@ -23,16 +28,13 @@ function playerTwo(){
     let playerOne = document.getElementById('playerTwo');
     playerOne.innerText = item_playerTwo;
     document.getElementById('item_dice2').style.display = 'none';
-    item_roll.style.display = 'block'
+    item_roll.style.display = 'block';
+    turn1.style.display = 'block'
 }
 
 function rollDice(){
-    // let item_resultOne = document.getElementById('item_resultOne');
-    let item_resultTwo = document.getElementById('item_resultTwo');
-
     let randomNumber = Math.floor(Math.random()*6 + 1);
-    if(playerChance % 2 === 1 && playerOneScore < 30){
-        // playerOneScore +=randomNumber;
+    if(playerChance % 2 === 1 && playerOneScore < 30 && playerTwoScore < 30){
         playerChance++;
         if(randomNumber ===1 || randomNumber === 2 || randomNumber === 3 || randomNumber === 4 || randomNumber === 5 || randomNumber === 6){
             const diceImage = 'Asset/'+ randomNumber + '.jpg';
@@ -42,19 +44,25 @@ function rollDice(){
             // console the value of player one
             console.log(`Player chance ${playerChance}, Player 1 Random Number ${randomNumber}`);
             console.log(`player 1 score ${playerOneScore}`);
+            turn1.style.display = 'none'
+            turn2.style.display = 'block'
         }
     }
-    else if(playerChance % 2 === 0 && playerTwoScore < 30){
+    else if(playerChance % 2 === 0 && playerTwoScore < 30 && playerOneScore < 30){
         playerChance++;
         if(randomNumber ===1 || randomNumber === 2 || randomNumber === 3 || randomNumber === 4 || randomNumber === 5 || randomNumber === 6){
             playerTwoScore += randomNumber;
             const diceImage = 'Asset/'+ randomNumber + '.jpg';
             document.getElementById('item_dice_img').setAttribute('src',diceImage);
             document.getElementById('item_resultTwo').innerText = playerTwoScore;
-
             // console the value of player 2
             console.log(`Player chance ${playerChance}, Player 2 Random Number ${randomNumber}`);
             console.log(`player 2 score ${playerOneScore}`);
+            turn1.style.display = 'block'
+            turn2.style.display = 'none'
         }
+    }
+    if(count % 2 === 0){
+        
     }
 }
