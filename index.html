@@ -14,18 +14,18 @@
         </div>
         <div class="item_child">
             <div class="item_child1">
-                <p id="playerOne" ></p>
-                <input type="text" id="item_player1" >
-                <button onclick="playerOne()" >Player 1</button>
+                <p id="playerOne" class="item_playerOne"></p>
+                <input type="text" id="item_player1" placeholder="Player 1 " >
+                <button onclick="playerOne()" id="item_dice1">Player 1</button>
             </div>
             <div class="item_child2">
                 <p id="playerTwo"></p>
-                <input type="text" id="item_player2" >
-                <button onclick="playerTwo()" >Player 2</button>
+                <input type="text" id="item_player2" placeholder="Player 2 ">
+                <button onclick="playerTwo()" id="item_dice2"  >Player 2</button>
             </div>
         </div>
         <div class="item_roll">
-            <button onclick="rollDice()">Roll Dice</button>
+            <button onclick="rollDice()" id="item_roll" >Roll Dice</button>
         </div>
     </div>
     <script src="./script.js" ></script>
