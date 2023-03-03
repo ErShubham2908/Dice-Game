@@ -40,7 +40,7 @@ function playerTwo(){
 
 function rollDice(){
     let randomNumber = Math.floor(Math.random()*6 + 1);
-    if(playerChance % 2 === 1 && playerOneScore < 30 && playerTwoScore < 30){
+    if(playerChance % 2 === 1 && playerOneScore < 100 && playerTwoScore < 100){
         playerChance++;
         if(randomNumber ===1 || randomNumber === 2 || randomNumber === 3 || randomNumber === 4 || randomNumber === 5 || randomNumber === 6){
             const diceImage = 'Asset/'+ randomNumber + '.jpg';
@@ -54,7 +54,7 @@ function rollDice(){
             turn2.style.display = 'block'
         }
     }
-    else if(playerChance % 2 === 0 && playerTwoScore < 30 && playerOneScore < 30){
+    else if(playerChance % 2 === 0 && playerTwoScore < 100 && playerOneScore < 100){
         playerChance++;
         if(randomNumber ===1 || randomNumber === 2 || randomNumber === 3 || randomNumber === 4 || randomNumber === 5 || randomNumber === 6){
             playerTwoScore += randomNumber;
@@ -68,7 +68,7 @@ function rollDice(){
             turn2.style.display = 'none'
         }
     }
-    if(playerOneScore >= 30 || playerTwoScore >=30){
+    if(playerOneScore >= 100 || playerTwoScore >=100){
         let winner1 = document.getElementById('winner1');
         let winner2 = document.getElementById('winner2');
         let child1 = document.getElementById('item_child1');
@@ -77,10 +77,10 @@ function rollDice(){
         child2.style.display = 'none'
         item_roll.style.display = 'none'
         imgDice.style.display = 'none'
-        if(playerOneScore >= 30){
+        if(playerOneScore >= 100){
             winner1.innerHTML = `You are the Winner`
         }
-        else if(playerTwoScore >= 30){
+        else if(playerTwoScore >= 100){
             winner2.innerHTML = `You are the Winner`
         }
     }
