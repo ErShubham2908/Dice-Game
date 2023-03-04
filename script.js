@@ -20,22 +20,32 @@ function newgame(){
 
 function playerOne(){
     let item_playerOne = document.getElementById('item_player1').value;
-    document.getElementById('item_player1').style.display = 'none'
-    let playerOne = document.getElementById('playerOne');
-    playerOne.innerText = item_playerOne;
-    document.getElementById('item_dice1').style.display = 'none'
-    secondBtn.style.display = "inline-block"
+    if(item_playerOne.length >=1){
+        document.getElementById('item_player1').style.display = 'none'
+        let playerOne = document.getElementById('playerOne');
+        playerOne.innerText = item_playerOne;
+        document.getElementById('item_dice1').style.display = 'none'
+        secondBtn.style.display = "inline-block"
+    }
+    else{
+        alert("Please Enter Name...")
+    }
 }
 
 function playerTwo(){
     let item_playerTwo = document.getElementById('item_player2').value;
-    document.getElementById('item_player2').style.display = 'none'
-    let playerOne = document.getElementById('playerTwo');
-    playerOne.innerText = item_playerTwo;
-    document.getElementById('item_dice2').style.display = 'none';
-    item_roll.style.display = 'block';
-    turn1.style.display = 'block'
-    imgDice.style.display = 'block'
+    if(!item_playerTwo.length){
+        alert("Enter Enter Name..")
+    }
+    else{
+        document.getElementById('item_player2').style.display = 'none'
+        let playerOne = document.getElementById('playerTwo');
+        playerOne.innerText = item_playerTwo;
+        document.getElementById('item_dice2').style.display = 'none';
+        item_roll.style.display = 'block';
+        turn1.style.display = 'block'
+        imgDice.style.display = 'block'
+    }
 }
 
 function rollDice(){
